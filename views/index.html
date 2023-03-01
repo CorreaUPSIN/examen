@@ -33,6 +33,7 @@
             padding: 50px;
             margin-top: 1em;
             margin-bottom: 1em;
+            border-radius: 5px;
         }
 
         .formulario__Header{
@@ -40,6 +41,7 @@
             background-color: aqua;
             text-align: center;
             padding: 5px;
+            border-radius: 5px;
         }
 
         .formulario__Form{
@@ -55,6 +57,7 @@
             background-color: aqua;
             text-align: center;
             padding: 5px;
+            border-radius: 5px;
         }
 
     </style>
@@ -66,46 +69,65 @@
 
             <div class="container">
 
-                <header class="formulario__Header">
-                    <h4><%=Header%></h4>
+                <header style="display: flex; " class="formulario__Header">
+                    <div style="width: 35%;">
+                        
+                        <a href="http://www.upsin.edu.mx/" target="_blank"><img style="width: 60px; border-radius: 20px;" src="./img/logoUpsin.png" alt=""></a>
+                    </div>
+                    <div style="display: grid; place-items: center;">
+                        <h4><%=Header%></h4>
+                    </div>
+                    
                 </header>
                 
-                <form action="" class="formulario__Form">
+                <form action="" method="p" class="formulario__Form">
                     
+                    <!--Numero De Boleto-->
                     <div class="input-group mb-3">
                         <span style="width: 175px; justify-content: center;" class="input-group-text" id="basic-addon1">Num Boleto</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="NumeroBoleto" name="NumeroBoleto" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
                     </div>
 
+                    <!--Destino del Viaje-->
                     <div class="input-group mb-3">
                         <span style="width: 175px; justify-content: center;" class="input-group-text" id="basic-addon1">Destino</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="Destino" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
                     </div>
 
+                    <!--Nombre del Cliente-->
                     <div class="input-group mb-3">
                         <span style="width: 175px; justify-content: center;"  class="input-group-text" id="basic-addon1">Nombre del Cliente</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="NombreCliente" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
                     </div>
 
+                    <!--Años Cumplidos-->
                     <div class="input-group mb-3">
                         <span style="width: 175px; justify-content: center;" class="input-group-text" id="basic-addon1">Años Cumplidos</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="Edad" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
                     </div>
 
+                    <!--Tipo de Viaje-->
                     <div class="input-group mb-3">
                         <label style="width: 175px; justify-content: center;" class="input-group-text" for="inputGroupSelect01">Tipo de Viaje</label>
-                        <select class="form-select" id="inputGroupSelect01">
-                          <option selected>Seleccionar...</option>
+                        <select id="TipoViaje" class="form-select" required>
+                          <option value="">Seleccionar...</option>
                           <option value="1">Sencillo</option>
                           <option value="2">Doble</option>
                         </select>
                       </div>
 
+                    <!--Precio-->
+                    <div class="input-group mb-3">
+                        <span style="width: 140px; justify-content: center;" class="input-group-text" id="basic-addon1">Precio</span>
+                        <span style="width: 35px; justify-content: center;" class="input-group-text" id="addon-wrapping">$</span>
+                        <input id="Precio" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                    </div>
+
                     <hr>
 
                     <div class="input-group mb-3">
                         <center>
-                            <input type="submit" class="btn btn-outline-secondary" value="Calcular">
+                            <input type="button" class="btn btn-outline-secondary" value="Calcular" onclick="Resultados()">
                             <input type="reset" class="btn btn-outline-secondary" value="Limpiar">
                         </center>
                     </div>
@@ -115,22 +137,26 @@
 
                       <div class="input-group flex-nowrap">
                         <span style="width: 125px; justify-content: center;" class="input-group-text" id="addon-wrapping">SubTotal</span>
-                        <input style="max-width: 250px;" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input id="SubTotal" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
                       </div>
 
                       <div class="input-group flex-nowrap">
                         <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Impuesto 16%</span>
-                        <input style="max-width: 250px;" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input id="Impuesto" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
                       </div>
 
                       <div class="input-group flex-nowrap">
                         <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Descuento</span>
-                        <input style="max-width: 250px;" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input id="Descuento" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
                       </div>
 
                       <div class="input-group flex-nowrap">
                         <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Total a Pagar</span>
-                        <input style="max-width: 250px;" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                        <span class="input-group-text" id="addon-wrapping">$</span>
+                        <input id="TotalAPagar" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
                       </div>
 
                 </form>
@@ -142,8 +168,9 @@
             
         </main>
 
-        <span>.</span>
 
 </body>
+
+<script src="./js/main.js"></script>
 
 </html>

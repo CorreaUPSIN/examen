@@ -8,7 +8,7 @@ const router = express.Router();
 // Ruta principal que muestra una página con los datos del array "datos"
 router.get("/", (req, res) => {
     res.render("index.html", {
-      Header: "Viajes Destino Feliz",
+      Header: "Viajes el Destino Feliz",
       Footer: "@Derechos Reservados Bryan Gonzalez",
     });
 });
