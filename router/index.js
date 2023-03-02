@@ -4,19 +4,18 @@ const express = require("express");
 
 // Crear una instancia de Router
 const router = express.Router();
-  
 // Ruta principal que muestra una página con los datos del array "datos"
 router.get("/", (req, res) => {
     res.render("index.html", {
-      Header: "Viajes el Destino Feliz",
-      Footer: "@Derechos Reservados Bryan Gonzalez",
+    Header: "Viajes el Destino Feliz",
+    Footer: "@Derechos Reservados JORGE SAID CORREA SANCHEZ",
     });
 });
 
 // Ruta que muestra una página con una tabla vacía que espera un parámetro llamado "numero" en la URL
 router.get("/tabla", (req, res) => {
     const params = {
-     numero: req.query.numero
+        numero: req.query.numero
     };
     res.render("tabla.html", params);
 });

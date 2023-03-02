@@ -11,164 +11,98 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-
-        }
-
-        .centrarDiv {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-        }
-
-        #Formulario{
-            background-color: dodgerblue;
-            width: 60vw;
-            min-width: 500px;
-            height: auto;
-            padding: 50px;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            border-radius: 5px;
-        }
-
-        .formulario__Header{
-            border: rgb(0, 55, 110) solid 3px;
-            background-color: aqua;
-            text-align: center;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        .formulario__Form{
-            background-color: whitesmoke;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            border-radius: 5px;
-            padding: 15px;
-        }
-
-        .formulario__Footer{
-            border: rgb(0, 55, 110) solid 3px;
-            background-color: aqua;
-            text-align: center;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
     </style>
 </head>
 
-<body style="background-color: #333;" class="centrarDiv">
+<body style="background-color: #a3dde8;">
+    <center>
 
-        <main id="Formulario" class="main centrarDiv">
-
-            <div class="container">
-
-                <header style="display: flex; " class="formulario__Header">
-                    <div style="width: 35%;">
-                        
-                        <a href="http://www.upsin.edu.mx/" target="_blank"><img style="width: 60px; border-radius: 20px;" src="./img/logoUpsin.png" alt=""></a>
-                    </div>
-                    <div style="display: grid; place-items: center;">
-                        <h4><%=Header%></h4>
-                    </div>
-                    
-                </header>
-                
-                <form action="" method="p" class="formulario__Form">
-                    
-                    <!--Numero De Boleto-->
-                    <div class="input-group mb-3">
-                        <span style="width: 175px; justify-content: center;" class="input-group-text" id="basic-addon1">Num Boleto</span>
-                        <input id="NumeroBoleto" name="NumeroBoleto" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
-                    </div>
-
-                    <!--Destino del Viaje-->
-                    <div class="input-group mb-3">
-                        <span style="width: 175px; justify-content: center;" class="input-group-text" id="basic-addon1">Destino</span>
-                        <input id="Destino" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
-                    </div>
-
-                    <!--Nombre del Cliente-->
-                    <div class="input-group mb-3">
-                        <span style="width: 175px; justify-content: center;"  class="input-group-text" id="basic-addon1">Nombre del Cliente</span>
-                        <input id="NombreCliente" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
-                    </div>
-
-                    <!--Años Cumplidos-->
-                    <div class="input-group mb-3">
-                        <span style="width: 175px; justify-content: center;" class="input-group-text" id="basic-addon1">Años Cumplidos</span>
-                        <input id="Edad" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
-                    </div>
-
-                    <!--Tipo de Viaje-->
-                    <div class="input-group mb-3">
-                        <label style="width: 175px; justify-content: center;" class="input-group-text" for="inputGroupSelect01">Tipo de Viaje</label>
-                        <select id="TipoViaje" class="form-select" required>
-                          <option value="">Seleccionar...</option>
-                          <option value="1">Sencillo</option>
-                          <option value="2">Doble</option>
-                        </select>
-                      </div>
-
-                    <!--Precio-->
-                    <div class="input-group mb-3">
-                        <span style="width: 140px; justify-content: center;" class="input-group-text" id="basic-addon1">Precio</span>
-                        <span style="width: 35px; justify-content: center;" class="input-group-text" id="addon-wrapping">$</span>
-                        <input id="Precio" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
-                    </div>
-
-                    <hr>
-
-                    <div class="input-group mb-3">
-                        <center>
-                            <input type="button" class="btn btn-outline-secondary" value="Calcular" onclick="Resultados()">
-                            <input type="reset" class="btn btn-outline-secondary" value="Limpiar">
-                        </center>
-                    </div>
-
-
-                      <!--Resultados-->
-
-                      <div class="input-group flex-nowrap">
-                        <span style="width: 125px; justify-content: center;" class="input-group-text" id="addon-wrapping">SubTotal</span>
-                        <span class="input-group-text" id="addon-wrapping">$</span>
-                        <input id="SubTotal" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                      </div>
-
-                      <div class="input-group flex-nowrap">
-                        <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Impuesto 16%</span>
-                        <span class="input-group-text" id="addon-wrapping">$</span>
-                        <input id="Impuesto" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                      </div>
-
-                      <div class="input-group flex-nowrap">
-                        <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Descuento</span>
-                        <span class="input-group-text" id="addon-wrapping">$</span>
-                        <input id="Descuento" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                      </div>
-
-                      <div class="input-group flex-nowrap">
-                        <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Total a Pagar</span>
-                        <span class="input-group-text" id="addon-wrapping">$</span>
-                        <input id="TotalAPagar" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                      </div>
-
-                </form>
-
-                <footer class="formulario__Footer">
-                    <b><%=Footer%></b>
-                </footer>
+<table >
+    
+        <div class="container">
+            <header class="d-flex justify-content-between align-items-center">
+            <div>
+            <a href="http://www.upsin.edu.mx/" target="_blank"><img style="width: 60px; border-radius: 20px;" src="./img/logoUpsin.png" alt=""></a>
             </div>
-            
-        </main>
-
-
+                <h4 class="text-center"><%=Header%></h4>
+            </header>
+            <form action="" method="p" class="formulario__Form">
+    
+    <div class="row mb-3">
+        <label for="NumeroBoleto" class="col-4 col-form-label">Num Boleto</label>
+        <div class="col-8">
+            <input id="NumeroBoleto" name="NumeroBoleto" type="number" class="form-control" placeholder="" required>
+        </div>
+        </div>
+                <div class="row mb-3">
+                <label for="Destino" class="col-4 col-form-label">Destino</label>
+                <div class="col-8">
+                    <input id="Destino" type="text" class="form-control" placeholder="" required>
+                </div>
+                </div>
+                        <div class="row mb-3">
+                            <label for="NombreCliente" class="col-4 col-form-label">Nombre del Cliente</label>
+                <div class="col-8">
+                    <input id="NombreCliente" type="text" class="form-control" placeholder="" required>
+        </div>
+        </div>
+        <div class="row mb-3">
+            <label for="Edad" class="col-4 col-form-label">Años Cumplidos</label>
+            <div class="col-8">
+            <input id="Edad" type="number" class="form-control" placeholder="" required>
+            </div>
+            </div>
+        <div class="row mb-3">
+        <label for="TipoViaje" class="col-4 col-form-label">Tipo de Viaje</label>
+        <div class="col-8">
+            <select id="TipoViaje" class="form-select" required>
+                <option value="">Seleccionar...</option>
+                <option value="1">Sencillo</option>
+                <option value="2">Doble</option>
+                    </select>
+                </div>          <!--Precio-->
+            <div class="input-group mb-3">
+                <span style="width: 140px; justify-content: center;" class="input-group-text" id="basic-addon1">Precio</span>
+                <span style="width: 35px; justify-content: center;" class="input-group-text" id="addon-wrapping">$</span>
+                <input id="Precio" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
+            </div>          
+            <hr>          <div class="input-group mb-3">
+                <center>
+                    <input type="button" class="btn btn-outline-secondary" value="Calcular" onclick="Resultados()">
+                    <input type="reset" class="btn btn-outline-secondary" value="Limpiar">
+                </center>
+            </div>            <!--Resultados-->            <div class="input-group flex-nowrap">
+                            <span style="width: 125px; justify-content: center;" class="input-group-text" id="addon-wrapping">SubTotal</span>
+                            <span class="input-group-text" id="addon-wrapping">$</span>
+                            <input id="SubTotal" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
+                        </div>
+                    
+                        <div class="input-group flex-nowrap">
+                            <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Impuesto 16%</span>
+                            <span class="input-group-text" id="addon-wrapping">$</span>
+                            <input id="Impuesto" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
+                        </div>
+                    
+                        <div class="input-group flex-nowrap">
+                            <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Descuento</span>
+                            <span class="input-group-text" id="addon-wrapping">$</span>
+                            <input id="Descuento" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
+                        </div>
+                    
+                        <div class="input-group flex-nowrap">
+                            <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Total a Pagar</span>
+                            <span class="input-group-text" id="addon-wrapping">$</span>
+                            <input id="TotalAPagar" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
+                        </div>
+                    
+                    </form>
+                
+                    <footer class="card-footer text-muted">
+                        <b><%=Footer%></b>
+                    </footer>
+                </div>
+        </table>
+    </center>
 </body>
 
 <script src="./js/main.js"></script>
