@@ -16,17 +16,15 @@
 
 <body style="background-color: #a3dde8;">
     <center>
-
-<table >
     
-        <div class="container">
-            <header class="d-flex justify-content-between align-items-center">
+        <div style="width: 600px; border-radius: 3px; " class="c">
+            <header class="d-flex justify-content-between align-items-center" style="width: 550px;">
             <div>
             <a href="http://www.upsin.edu.mx/" target="_blank"><img style="width: 60px; border-radius: 20px;" src="./img/logoUpsin.png" alt=""></a>
             </div>
                 <h4 class="text-center"><%=Header%></h4>
             </header>
-            <form action="" method="p" class="formulario__Form">
+            <form action="" method="p" class="formulario__Form" style="width: 500px; background-color: rgb(107, 235, 228);">
     
     <div class="row mb-3">
         <label for="NumeroBoleto" class="col-4 col-form-label">Num Boleto</label>
@@ -68,8 +66,8 @@
             </div>          
             <hr>          <div class="input-group mb-3">
                 <center>
-                    <input type="button" class="btn btn-outline-secondary" value="Calcular" onclick="Resultados()">
-                    <input type="reset" class="btn btn-outline-secondary" value="Limpiar">
+                    <input type="button" class="btn btn-primary" value="Calcular" onclick="Resultados()">
+                    <input type="reset" class="btn btn-warning" value="Limpiar">
                 </center>
             </div>            <!--Resultados-->            <div class="input-group flex-nowrap">
                             <span style="width: 125px; justify-content: center;" class="input-group-text" id="addon-wrapping">SubTotal</span>
@@ -97,11 +95,10 @@
                     
                     </form>
                 
-                    <footer class="card-footer text-muted">
+                    <footer class="card-footer text-muted" style="width: 500px;">
                         <b><%=Footer%></b>
                     </footer>
                 </div>
-        </table>
     </center>
 </body>
 
