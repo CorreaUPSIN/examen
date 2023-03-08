@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 });
 
 // Iniciar el servidor en el puerto 3000 y mostrar un mensaje en la consola
-const puerto = 3300;
+const puerto = 4000;
 app.listen(puerto, () => {
   console.log("Iniciando Puerto Del Examen Corte 2");
 });
