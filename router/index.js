@@ -6,27 +6,55 @@ const express = require("express");
 const router = express.Router();
 // Ruta principal que muestra una página con los datos del array "datos"
 router.get("/", (req, res) => {
-    res.render("index.html", {
-    Header: "Viajes el Destino Feliz",
+    res.render("entrada.html", {
+    Header: "SISTEMAS MICROINFORMATICA",
     Footer: "@Derechos Reservados JORGE SAID CORREA SANCHEZ",
     });
 });
-
-// Ruta que muestra una página con una tabla vacía que espera un parámetro llamado "numero" en la URL
-router.get("/tabla", (req, res) => {
-    const params = {
-        numero: req.query.numero
+router.get('/entrada', (req, res) => {
+    const datos = {
+        nombre: req.query.nombre,
+        nivelestudios: req.query.nivelestudios,
+        pagodiario: req.query.pagodiario,
+        diastrabajados: req.query.diastrabajados
     };
-    res.render("tabla.html", params);
+    res.render('resultados.html', datos );
+  
+
 });
 
-// Ruta que recibe el número enviado a través del formulario de la página "/tabla" y lo muestra en una tabla
-router.post("/tabla", (req, res) => {
-    const params = {
-        numero: req.body.numero
+
+router.post("/entrada", (req, res) => {
+    const datos = {
+        nombre: req.body.nombre,
+        nivelestudios: req.body.nivelestudios,
+        pagodiario: req.body.pagodiario,
+        diastrabajados: req.body.diastrabajados
     };
-    res.render("tabla.html", params);
+    res.render("resultados.html", datos);
+
+
 });
+router.get("/resultados", (req, res) => {
+    const datos = {
+        nombre: req.query.nombre,
+        nivelestudios: req.query.nivelestudios,
+        pagodiario: req.query.pagodiario,
+        diastrabajados: req.query.diastrabajados
+    };
+    res.render("resultados.html", datos);
+  
+
+    });
+    router.post("/resultados", (req, res) => {
+        const datos = {
+        nombre: req.body.nombre,
+        nivelestudios: req.body.nivelestudios,
+        pagodiario: req.body.pagodiario,
+        diastrabajados: req.body.diastrabajados
+        };
+        res.render("resultados.html", datos);
+    });
 
 // Exportar el módulo Router para que pueda ser utilizado en otros archivos
 module.exports = router;

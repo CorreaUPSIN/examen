@@ -30,8 +30,8 @@ app.use((req, res, next) => {
   res.status(404).sendFile(__dirname + "/public/error.html");
 });
 
-// Iniciar el servidor en el puerto 500 y mostrar un mensaje en la consola
+// Iniciar el servidor en el puerto 3000 y mostrar un mensaje en la consola
 const puerto = 3300;
 app.listen(puerto, () => {
-  console.log("Iniciando Puerto del PreExamen");
+  console.log("Iniciando Puerto Del Examen Corte 2");
 });
