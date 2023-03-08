@@ -38,8 +38,8 @@
                     <input id="Destino" type="text" class="form-control" placeholder="" required>
                 </div>
                 </div>
-                        <div class="row mb-3">
-                            <label for="NombreCliente" class="col-4 col-form-label">Nombre del Cliente</label>
+                    <div class="row mb-3">
+                        <label for="NombreCliente" class="col-4 col-form-label">Nombre del Cliente</label>
                 <div class="col-8">
                     <input id="NombreCliente" type="text" class="form-control" placeholder="" required>
         </div>
@@ -51,47 +51,13 @@
             </div>
             </div>
         <div class="row mb-3">
-        <label for="TipoViaje" class="col-4 col-form-label">Tipo de Viaje</label>
+        <label for="TipoViaje" class="col-4 col-form-label">Nivel de estudios</label>
         <div class="col-8">
             <select id="TipoViaje" class="form-select" required>
-                <option value="">Seleccionar...</option>
-                <option value="1">Sencillo</option>
-                <option value="2">Doble</option>
-                    </select>
-                </div>          <!--Precio-->
-            <div class="input-group mb-3">
-                <span style="width: 140px; justify-content: center;" class="input-group-text" id="basic-addon1">Precio</span>
-                <span style="width: 35px; justify-content: center;" class="input-group-text" id="addon-wrapping">$</span>
-                <input id="Precio" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" required="true">
-            </div>          
-            <hr>          <div class="input-group mb-3">
-                <center>
-                    <input type="button" class="btn btn-primary" value="Calcular" onclick="Resultados()">
-                    <input type="reset" class="btn btn-warning" value="Limpiar">
-                </center>
-            </div>            <!--Resultados-->            <div class="input-group flex-nowrap">
-                            <span style="width: 125px; justify-content: center;" class="input-group-text" id="addon-wrapping">SubTotal</span>
-                            <span class="input-group-text" id="addon-wrapping">$</span>
-                            <input id="SubTotal" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                        </div>
-                    
-                        <div class="input-group flex-nowrap">
-                            <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Impuesto 16%</span>
-                            <span class="input-group-text" id="addon-wrapping">$</span>
-                            <input id="Impuesto" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                        </div>
-                    
-                        <div class="input-group flex-nowrap">
-                            <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping">Descuento</span>
-                            <span class="input-group-text" id="addon-wrapping">$</span>
-                            <input id="Descuento" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                        </div>
-                    
-                        <div class="input-group flex-nowrap">
-                            <span style="width: 125px; justify-content: center;"  class="input-group-text" id="addon-wrapping"><strong><u> Total a Pagar</u></strong> </span>
-                            <span class="input-group-text" id="addon-wrapping">$</span>
-                            <input id="TotalAPagar" style="max-width: 250px;" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" readonly >
-                        </div>
+                <option value="1">Licenciatura</option>
+                <option value="2">Maestría</option>
+                <option value="3">Doctorado</option>
+            </select>
                     
                     </form>
                 

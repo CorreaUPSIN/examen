@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 });
 
 // Iniciar el servidor en el puerto 500 y mostrar un mensaje en la consola
-const puerto = 500;
+const puerto = 3300;
 app.listen(puerto, () => {
   console.log("Iniciando Puerto del PreExamen");
 });
